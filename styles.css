@@ -50,8 +50,7 @@ input {
     color: var(--Verydarkcyan);
     font-weight: 600;
     text-align: right;
-    width: 24rem;
-    
+    width: 24rem; 
 }
 
 
@@ -128,6 +127,7 @@ button:hover {
     gap: 3rem;
     font-family: "Space Mono", monospace;
     font-weight: 600;
+    padding-top: 3rem;
 
 }
 
