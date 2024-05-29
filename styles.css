@@ -33,11 +33,12 @@ label {
     font-weight: 700;
 }
 
-.billAmount {
+.billAmountBox, .numPeopleBox {
     background-color: var(--Verylightgrayishcyan);
+    padding: 0 10px;
     
-    display: flex;
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 input {
@@ -48,9 +49,14 @@ input {
     font-size: 24px;
     color: var(--Verydarkcyan);
     font-weight: 600;
-    
+    text-align: right;
+    width: 24rem;
     
 }
+
+
+    
+
 header {
     /* border: solid; */
     display: flex;
@@ -61,7 +67,7 @@ header {
 }
 
 .container {
-    width: 50rem;
+    width: 60rem;
     background-color: var(--White);
     display: flex;
     padding: 1.8rem;
@@ -71,15 +77,82 @@ header {
 }
 
 .left {
-    width: 25rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: "Space Mono", monospace;
+}
+
+.bill, .selectTip, .numberPeople {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.percentages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.percentages button {
+    background-color: var(--Verydarkcyan);
+    color: var(--White);
+    width: 8rem;
+    font-family: "Space Mono", monospace;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    
+}
+
+button:hover {
+    background-color: var(--Strongcyan);
+    color: var(--Verydarkcyan);
+}
+
+#custom {
+    width: 8rem;
+    text-align: center;
 }
 
 .right {
-    width: 25rem;
+    width: 30rem;
     background-color: var(--Verydarkcyan);
     border-radius: 15px;
     color: var(--White);
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    gap: 3rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 600;
+
+}
+
+.tipAmount, 
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+#resetBtn {
+    background-color: hsl(183,80%,24%);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    color: hsl(184,89%,21%);
+    font-weight: 700;
+    font-size: large;
+    margin-top: 50px;
+}
+
+.greyColor {
+    color: var(--Grayishcyan);
+}
+
+.tipAmountResult, .totalResult {
+    font-size: 2rem;
+    color: var(--Strongcyan);
 }

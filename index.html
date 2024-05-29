@@ -23,8 +23,8 @@
       <div class="left">
         <div class="bill">
           <label for="title">Bill</label>
-          <div class="billAmount">
-            <img src="images/icon-dollar.svg" alt="">
+          <div class="billAmountBox">
+            <span><img src="images/icon-dollar.svg" alt=""></span>
             <input type="text" placeholder="0">
           </div>
         </div>
@@ -36,15 +36,15 @@
             <button>15%</button>
             <button>25%</button>
             <button>50%</button>
-            <button>Custom</button>
+            <input type="text" placeholder="Custom" id="custom">
           </div>
         </div>
 
         <div class="numberPeople">
           <label for="numofPeople">Number of People</label>
-          <div class="numPeople">
-            <img src="images/icon-person.svg" alt="person icon">
-            <input type="number">
+          <div class="numPeopleBox">
+            <span><img src="images/icon-person.svg" alt="person icon"></span>
+            <input type="text" placeholder="0">
           </div>
         </div>
         
@@ -54,25 +54,25 @@
         <div class="tipAmount">
           <div class="amountTag">
             <p>Tip Amount</p>
-            <p>/ person</p>
+            <p class="greyColor">/ person</p>
           </div>
-          <div>
+          <div class="tipAmountResult">
             $
-            <span>0.00</span>
+            <span id="tipAmount">0.00</span>
           </div>
           
         </div>
         <div class="total">
           <div class="totalTag">
             <p>Total</p>
-            <p>/ person</p>
+            <p class="greyColor">/ person</p>
           </div>
-          <div>
+          <div class="totalResult">
             $ 
-            <span>0.00</span>
+            <span id="total">0.00</span>
           </div>
         </div>
-        <button>RESET</button>
+        <button id="resetBtn">RESET</button>
       </div>
     </div>
   </main>
