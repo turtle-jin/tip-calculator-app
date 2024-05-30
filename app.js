@@ -1,12 +1,27 @@
 
-//functions to calculate the amount
-function TotalPerPerson(totalBill, percentage, person) {
-    return ((totalBill * percentage / 100) + totalBill) / person; 
+//function to do the calculation
+const calcAmount = function() {
+    let totalBill = totalBillInput.value;
+    let percentage = percentages.value;
+    let numOfPeople = person.value;
+
+    //then do the calculation
+    let totalPerPerson = ((totalBill * percentage / 100) + totalBill) / numOfPeople; 
+    let tipPerPerson = ((totalBill * percentage / 100) + totalBill) / numOfPeople; 
+
+    // TODO: Update textcontent 
+    // TODO: validate values, return error msgs 
 }
 
-function tipPerPerson(totalBill, percentage, person) {
-    return (totalBill * percentage / 100) / person;
-}
+
+const totalBillInput = document.querySelector("#totalBill");
+const percentages = document.querySelectorAll(".percentages");
+const customTip = document.querySelector("#custom");
+const person = document.querySelector("#person");
 
 
+
+// TODO: add eventlistener to totalBillInput, percentages, customTip, and person)
+totalBillInput.addEventListener("input", calcAmount);
+person.addEventListener("input", calcAmount)
 
