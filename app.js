@@ -29,6 +29,8 @@ const validateInputs = () => {
 const calcAmount = function() {
     if (!validateInputs()) return; 
 
+    
+
     const totalBill = parseFloat(totalBillInput.value);
     const numOfPeople = parseInt(person.value);
     let percentage = tipPercentage;
@@ -39,7 +41,8 @@ const calcAmount = function() {
             return; 
         }
     }
-
+    
+    updateResetButtonColor();
     //then do the calculation
     const totalPerPerson = ((totalBill * percentage / 100) + totalBill) / numOfPeople; 
     const tipPerPerson = (totalBill * percentage / 100) / numOfPeople; 
@@ -75,4 +78,18 @@ resetBtn.addEventListener("click", () => {
     tipAmountSpan.textContent = "0.00";
     totalAmountSpan.textContent = "0.00";
     tipPercentage = 0;
+    resetBtn.style.backgroundColor = "";
 })
+
+// Function to update reset button color
+const updateResetButtonColor = () => {
+    const totalBill = parseFloat(totalBillInput.value);
+    const numOfPeople = parseInt(person.value);
+    const percentage = tipPercentage || parseFloat(customTip.value);
+
+    if (totalBill || numOfPeople || percentage) {
+      resetBtn.style.backgroundColor = "hsl(172, 67%, 45%)";
+    } else {
+      resetBtn.style.backgroundColor = ""; 
+    }
+  };
