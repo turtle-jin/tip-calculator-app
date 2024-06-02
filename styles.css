@@ -170,3 +170,47 @@ button:hover {
     font-family: "Space Mono", monospace;
     font-weight: 600;
 }
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 375px;       
+        padding: 2rem;
+    }
+    .left {
+        /* border: solid; */
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        font-family: "Space Mono", monospace;
+    }
+    .right {
+        width: 320px;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 2rem;
+        padding: 1.5rem;
+    }
+    input {
+        width: 279px; 
+    }
+    #person {
+        width: 277px;
+    }
+    #resetBtn {  
+        border-radius: 6px;
+        margin-top: 0;
+    }
+    .percentages {
+        justify-content: space-between;
+        gap: 0.8rem;
+    }
+    .percentages button {
+        width: 153px;
+    }
+    #custom {
+        width: 153px;
+    }
+}
