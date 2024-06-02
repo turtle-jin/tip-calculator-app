@@ -157,3 +157,15 @@ button:hover {
     font-size: 2rem;
     color: var(--Strongcyan);
 }
+
+.labelRow, .billLabelRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.labelRow > P,
+.billLabelRow > P {
+    color: rgb(205, 110, 15);
+    font-family: "Space Mono", monospace;
+    font-weight: 600;
+}
