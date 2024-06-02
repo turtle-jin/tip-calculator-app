@@ -95,6 +95,11 @@ resetBtn.addEventListener("click", () => {
     totalAmountSpan.textContent = "0.00";
     tipPercentage = 0;
     resetBtn.style.backgroundColor = "";
+    if (btnSelected) {
+        btnSelected.style.backgroundColor = "";
+        btnSelected.style.color = "";
+        btnSelected = null; 
+    }
 })
 
 // Function to update reset button color
