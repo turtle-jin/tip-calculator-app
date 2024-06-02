@@ -7,6 +7,7 @@ const totalAmountSpan = document.querySelector("#total");
 const resetBtn = document.querySelector("#resetBtn");
 const billAlert = document.querySelector("#billAlert");
 const peopleAlert = document.querySelector("#peopleAlert");
+const tipAlert = document.querySelector("#tipAlert");
 let tipPercentage = 0;
 let btnSelected = null;
 
@@ -15,20 +16,23 @@ let btnSelected = null;
 const validateInputs = () => {
     const totalBill = parseFloat(totalBillInput.value);
     const numOfPeople = parseInt(person.value);
+    const customTipPercent = parseFloat(customTip.value);
 
     if (isNaN(totalBill) || totalBill <= 0) {
-        billAlert.textContent = "Invalid bill amount!"
+        billAlert.textContent = "Invalid bill amount!";
         return false;
     } else {
         billAlert.textContent = "";
     }
 
     if (isNaN(numOfPeople) || numOfPeople <= 0) {
-        peopleAlert.textContent = "Can't be zero or negative! "
+        peopleAlert.textContent = "Can't be zero or negative! ";
         return false;
     } else {
         peopleAlert.textContent = "";
     }
+
+    
     return true;
 }
 
@@ -36,17 +40,15 @@ const validateInputs = () => {
 //function to perform the calculation
 const calcAmount = function() {
     if (!validateInputs()) return; 
-
-    
-
     const totalBill = parseFloat(totalBillInput.value);
     const numOfPeople = parseInt(person.value);
+    const customTipPercent = parseFloat(customTip.value);
     let percentage = tipPercentage;
-    if (customTip.value) {
-        percentage = parseFloat(customTip.value);
-        if (isNaN(percentage) || percentage < 0) {
-            alert("Please enter a valid custom tip percentage"); 
-            return; 
+    if (customTipPercent) {
+        percentage = customTipPercent;
+        if (isNaN(customTipPercent) || customTipPercent <= 0) {
+            tipAlert.textContent = "Invalid custom tip!"
+            return false;
         }
     }
     
@@ -82,9 +84,16 @@ percentages.forEach(btn => {
     });
 })
 
-//TODO: add custom tip logic
 
-
+customTip.addEventListener("input", () => {
+    tipPercentage = 0;
+    if (selectedButton) {
+      selectedButton.style.backgroundColor = ""; // Original background color
+      selectedButton.style.color = ""; // Original text color
+      selectedButton = null;
+    }
+    calcAmount();
+})
 
 //reset function
 resetBtn.addEventListener("click", () => {

@@ -158,13 +158,14 @@ button:hover {
     color: var(--Strongcyan);
 }
 
-.labelRow, .billLabelRow{
+.labelRow, .billLabelRow, .tipLabelRow{
     display: flex;
     justify-content: space-between;
 }
 
 .labelRow > P,
-.billLabelRow > P {
+.billLabelRow > P, 
+.tipLabelRow > p {
     color: rgb(205, 110, 15);
     font-family: "Space Mono", monospace;
     font-weight: 600;
